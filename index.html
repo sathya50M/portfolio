@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -384,6 +383,313 @@ footer{
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+/* Mobile Navigation */
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+
+  nav {
+    justify-content: space-between;
+    padding: 1rem 6%;
+    min-height: 65px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #080808;
+    padding: 1.2rem 6%;
+    flex-direction: column;
+    gap: 1.2rem;
+    overflow: visible;
+  }
+
+  nav.open ul {
+    display: flex;
+  }
+
+  nav ul a {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+/* =====================================
+   COMPLETE MOBILE RESPONSIVENESS
+===================================== */
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 900px) {
+
+  :root {
+    --pad: 5%;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-doodle {
+    width: 42%;
+    right: 2%;
+  }
+
+  .hero-in {
+    max-width: 55%;
+  }
+
+  .card {
+    flex-basis: 260px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  :root {
+    --pad: 6%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* HERO SECTION */
+
+  .hero {
+    min-height: 85svh;
+    padding: 8rem 6% 5rem;
+    align-items: center;
+  }
+
+  .hero-doodle {
+    width: 58%;
+    max-width: 300px;
+    height: auto;
+    right: 0;
+    top: 23%;
+    transform: translateY(0);
+    opacity: 0.25;
+  }
+
+  .hero-in {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .badge {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 16vw, 5rem);
+    line-height: 0.95;
+    margin: 0.6rem 0 1rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  .btns {
+    gap: 0.7rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+  }
+
+
+  /* CONTENT ROWS */
+
+  main {
+    margin-top: -2.5rem;
+  }
+
+  .row {
+    margin-bottom: 1rem;
+  }
+
+  .row h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .track {
+    gap: 0.8rem;
+    padding: 1.5rem var(--pad);
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    flex: 0 0 min(82vw, 300px);
+    scroll-snap-align: start;
+  }
+
+  .cap {
+    font-size: 0.9rem;
+  }
+
+  .info {
+    font-size: 0.78rem;
+  }
+
+
+  /* DISABLE DESKTOP HOVER ENLARGEMENT */
+
+  .card.proj:hover,
+  .card.exp:hover,
+  .card.skill:hover {
+    transform: none;
+  }
+
+
+  /* SKILLS */
+
+  .card.skill {
+    flex-basis: 75vw;
+  }
+
+  .num {
+    font-size: 7rem;
+    -webkit-text-stroke: 3px #595959;
+  }
+
+  .skill .box {
+    min-height: 125px;
+    padding: 0.9rem;
+  }
+
+  .skill b {
+    font-size: 1rem;
+  }
+
+
+  /* PROJECT DETAILS MODAL */
+
+  #modal {
+    padding: 1rem 0.7rem;
+  }
+
+  .sheet {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .sheet .hd {
+    aspect-ratio: 16 / 10;
+  }
+
+  .sheet .hd h2 {
+    left: 1rem;
+    right: 3rem;
+    bottom: 1rem;
+    font-size: clamp(1.8rem, 8vw, 2.7rem);
+  }
+
+  .close {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .mb {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .mb .btns {
+    margin-top: 1rem;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    padding: 3rem 6% 2rem;
+    margin-top: 1rem;
+  }
+
+  .cta {
+    margin-bottom: 2rem;
+  }
+
+  .cta h2 {
+    font-size: 2.5rem;
+  }
+
+  .cta p {
+    font-size: 0.9rem;
+  }
+
+  .flinks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .flinks a {
+    overflow-wrap: anywhere;
+  }
+
+  .copy {
+    line-height: 1.8;
+    margin-top: 1.5rem;
+  }
+
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+
+  .hero h1 {
+    font-size: 3.3rem;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    font-size: 0.78rem;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .flinks {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 </style>
 </head>
 
@@ -392,7 +698,16 @@ footer{
 <!-- NAVBAR -->
 <nav id="nav" aria-label="Main navigation">
   <a class="logo" href="#home">SATHYA</a>
-  <ul>
+
+  <button class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="navLinks">
+    ☰
+  </button>
+
+  <ul id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -540,7 +855,7 @@ const SKILLS = [
   ["JavaScript","Programming"],
   ["React.js","Frontend"],
   ["Java","Programming"],
-  ["MySQL","Database"],
+   ["MySQL","Database"],
   ["Node.js","Backend"],
   ["REST APIs","Backend"],
   ["Git & GitHub","Tools"],
@@ -771,6 +1086,31 @@ $("#moreinfo").onclick = ()=>{
 addEventListener("scroll",()=>{
   $("#nav").classList.toggle("solid",scrollY>50);
 },{passive:true});
+
+/* MOBILE NAVIGATION */
+
+const menuToggle = $("#menuToggle");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = $("#nav").classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation" : "Open navigation"
+  );
+
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+$("#navLinks").addEventListener("click", event => {
+  if (event.target.closest("a")) {
+    $("#nav").classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+    menuToggle.textContent = "☰";
+  }
+});
 
 /* CURRENT YEAR */
 
